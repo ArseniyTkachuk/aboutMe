@@ -1,47 +1,51 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <headerC class="myHeader" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
+<script>
+import headerC from './components/headerC.vue';
 
+export default {
+  components: {
+    headerC,
+  },
+
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+
+  },
+
+  methods: {
+
+  }
+}
+
+</script>
 <style scoped>
-header {
-  line-height: 1.5;
+* {
+  /*Загальні налаштування*/
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+:global(body) {
+  /*Задній фон сайту */
+  background: linear-gradient(135deg, #4d0cff, #b000f8, #ff00b3);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+  font-family: "Roboto Slab", serif;
+  margin: 0%;
+  height: 100vh;
+
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.myHeader {
+  background: rgba(115, 114, 116, 0.334);
+  text-align: center;
+  height: 10vh;
 }
 </style>
